@@ -85,7 +85,7 @@ public class Main {
         SessionFactory factory = meta.getSessionFactoryBuilder().build();
         Session session = factory.openSession();
 
-        Query<StudentEntity> query = session.createQuery("SELECT new StudentEntity (s.id, s.name, s.surname) from StudentEntity as s");
+        Query<StudentEntity> query = session.createQuery("SELECT new StudentEntity(s.id, s.name, s.surname) from StudentEntity as s");
         List<StudentEntity> list = query.list();
 
         for (StudentEntity student : list) {
@@ -103,7 +103,7 @@ public class Main {
         SessionFactory factory = meta.getSessionFactoryBuilder().build();
         Session session = factory.openSession();
 
-        Query<StudentShortInfoDTO> query = session.createQuery("SELECT new dasturlash.uz.StudentShortInfoDTO(s.id, s.name, s.surname) from StudentEntity as s");
+        Query<StudentShortInfoDTO> query = session.createQuery("SELECT new dasturlash.uz.StudentShortInfoDTO(s.id, s.name, s.phone) from StudentEntity as s");
         List<StudentShortInfoDTO> list = query.list();
 
         for (StudentShortInfoDTO student : list) {
